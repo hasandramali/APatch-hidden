@@ -53,7 +53,7 @@ val baseArgs = mutableListOf(
 ).apply { if (ccache != null) add("-DANDROID_CCACHE=$ccache") }
 
 android {
-    namespace = "me.bmax.apatch"
+    namespace = "com.valvesoftware.aq"
 
     buildTypes {
         debug {
