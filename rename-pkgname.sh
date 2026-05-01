@@ -52,8 +52,8 @@ if [ "$NOSIGNATURE" = true ]; then
     
     if [ -n "$APATCH_APP_FILE" ]; then
         echo "Found APatchApp file at: $APATCH_APP_FILE"
-        sed -i '258s/^/\/\* /' "$APATCH_APP_FILE"
-        sed -i '268s/$/ \*\//' "$APATCH_APP_FILE"
+        sed -i '256s/^/\/\* /' "$APATCH_APP_FILE"
+        sed -i '265s/$/ \*\//' "$APATCH_APP_FILE"
         echo "✅ Signature verification disabled in $APATCH_APP_FILE"
     else
         echo "❌ APatchApp.kt file not found in $NEW_SRC_DIR"
@@ -63,8 +63,8 @@ if [ "$NOSIGNATURE" = true ]; then
         ALTERNATE_FILE=$(find "app/src/main/java" -name "APatchApp.kt" -o -name "APApplication.kt" | head -n 1)
         if [ -n "$ALTERNATE_FILE" ]; then
             echo "Found alternate file at: $ALTERNATE_FILE"
-            sed -i '258s/^/\/\* /' "$ALTERNATE_FILE"
-            sed -i '268s/$/ \*\//' "$ALTERNATE_FILE"
+            sed -i '256s/^/\/\* /' "$ALTERNATE_FILE"
+            sed -i '265s/$/ \*\//' "$ALTERNATE_FILE"
             echo "✅ Signature verification disabled in $ALTERNATE_FILE"
         else
             echo "❌ Could not find APatchApp.kt file anywhere!"
